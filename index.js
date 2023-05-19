@@ -60,7 +60,6 @@ function playRoundClick(playerChoice){
         yourScoreElement.textContent = `You: ${yourScore}`;
     }
     else if (result === 'lose'){
-        console.log("LOSE RAN");
         message.textContent = `You Lost: ${choices[computerChoice]} beats ${choices[playerChoice]}`;
         computerScore++;
         computerScoreElement.textContent = `Computer: ${computerScore}`;

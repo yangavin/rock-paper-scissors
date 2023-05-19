@@ -71,8 +71,12 @@ main{
 
 .result-container{
     height: 5rem;
-    margin-top: .2rem;
+    margin-top: .8rem;
     margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .message{
     margin: 0;
@@ -123,4 +127,35 @@ button:hover{
     border: none;
     border-radius: .3rem;
     font-size: 1.2rem;
+}
+
+@media (max-width: 1000px){
+    main{
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+@media (max-width: 600px){
+    main{
+        margin-left: 0;
+        margin-right: 0;
+    }
+    h1, h2{
+        font-size: 1rem;
+    }
+    .arena{
+        height: 20%;
+    }
+    .choice-container{
+        height: 10%;
+    }
+    .emoji{
+        font-size: 4rem;
+    }
+    .option-emoji{
+        font-size: 2rem;
+    }
+    .result-container{
+        margin: 0;
+    }
 }

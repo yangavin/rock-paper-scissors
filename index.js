@@ -58,6 +58,7 @@ let yourScoreElement = document.querySelector('#your-score');
 let computerScoreElement = document.querySelector('#computer-score');
 let result = document.querySelector('#result');
 let restart = document.querySelector('#restart-container');
+let restartButton = document.querySelector('#restart');
 
 //Indexing emoji codes, easy evaluation of choices from 0-2
 const choices = ['Rock', 'Paper', 'Scissors'];
@@ -101,9 +102,7 @@ function playRoundClick(playerChoice){
 }
 
 function gameOver(state){
-    rock.disabled = true;
-    paper.disabled = true;
-    scissors.disabled = true;
+    rock.disabled = paper.disabled = scissors.disabled = true;
     if (state === 'won'){
         result.textContent = 'You Won Best of 5!';
         message.innerHTML = 'Here, have this cookie &#x1F36A';
@@ -125,3 +124,12 @@ paper.addEventListener('click', ()=>{
 scissors.addEventListener('click', ()=>{
     playRoundClick(2);
 });
+restartButton.addEventListener('click', ()=>{
+    rock.disabled = paper.disabled = scissors.disabled = false;
+    restart.style.display = 'none';
+    yourScore = 0;
+    computerScore = 0;
+    yourScoreElement.textContent = `You: ${yourScore}`;
+    computerScoreElement.textContent = `You: ${computerScore}`;
+    result.textContent = message.textContent = '';
+})

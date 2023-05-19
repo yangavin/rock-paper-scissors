@@ -12,8 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
-<body>
-    <script src="index.js"></script>
+<body class="fade-in">
     <header>
         <h1 id="title">Rock Paper Scissors!</h1>
         <h2>Best of 5</h2>
@@ -22,11 +21,15 @@
         <section class="arena">
             <div class="you">
                 <h2>You</h2>
-                <div class="your-play"></div>
+                <div class="your-play">
+                    <div id="your-play-emoji" class="emoji"></div>
+                </div>
             </div>
             <div class="computer">
                 <h2>Computer</h2>
-                <div class="computer-play"></div>
+                <div class="computer-play">
+                    <div id="computer-play-emoji" class="emoji"></div>
+                </div>
             </div>
         </section>
         <div class="result-container">
@@ -48,6 +51,7 @@
             <button class="restart">Play again</button>
         </div>
     </main>
+    <script src="index.js"></script>
 </body>
 
 </html>

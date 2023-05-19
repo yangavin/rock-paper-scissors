@@ -1,5 +1,5 @@
 //0 is rock, 1 is paper, 2 is scissors
-//9994 9995 9996 (rock paper scissors) emoji
+//&#9994 &#9995 &#9996 (rock paper scissors) emoji
 function getRandChoice() {
     return Math.floor(Math.random() * 3);
 }
@@ -45,3 +45,27 @@ function game(){
     if (playerScore === 5) alert("You won best of 5!");
     else alert("Oh no! You lost best of 5.");
 }
+
+let rock = document.querySelector('#rock');
+let paper = document.querySelector('#paper');
+let scissors = document.querySelector('#scissors');
+let yourPlay = document.querySelector('#your-play-emoji');
+
+function displayEmoji(parent, emoji){
+    parent.innerHTML = emoji;
+    parent.classList.add('fade-in');
+    setTimeout(()=> {
+        parent.classList.remove('fade-in');
+      }, 200);
+}
+
+rock.addEventListener('click', (e)=>{
+    displayEmoji(yourPlay, '&#9994');
+    }
+)
+paper.addEventListener('click', (e)=>{
+    displayEmoji(yourPlay, '&#9995');
+});
+scissors.addEventListener('click', (e)=>{
+    displayEmoji(yourPlay, '&#9996');
+});

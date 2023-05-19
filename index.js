@@ -1,4 +1,5 @@
 //0 is rock, 1 is paper, 2 is scissors
+//9994 9995 9996 (rock paper scissors) emoji
 function getRandChoice() {
     return Math.floor(Math.random() * 3);
 }
@@ -44,5 +45,3 @@ function game(){
     if (playerScore === 5) alert("You won best of 5!");
     else alert("Oh no! You lost best of 5.");
 }
-
-game();

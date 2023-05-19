@@ -7,7 +7,7 @@ body{
 }
 
 header{
-    margin-bottom: 3rem;
+    /* margin-bottom: 3rem; */
 }
 
 h1, h2{
@@ -22,11 +22,11 @@ h2{
     font-weight: normal;
 }
 
-.game h2{
+main h2{
     margin-bottom: .4rem;
 }
 
-.game{
+main{
     margin-left: 6rem;
     margin-right: 6rem;
     height: 40rem;
@@ -39,7 +39,7 @@ h2{
 }
 
 .you, .computer{
-    width: 30%;
+    
 }
 
 .your-play{
@@ -68,7 +68,7 @@ h2{
 .choice-container{
     display: flex;
     justify-content: space-around;
-    height: 20%;
+    height: 18%;
     text-align: center;
 }
 
@@ -80,4 +80,20 @@ h2{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.restart-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem;
+}
+
+.restart{
+    width: 12rem;
+    height: 3rem;
+    background-color: #5BB86F;
+    color: white;
+    border: none;
+    border-radius: .3rem;
 }

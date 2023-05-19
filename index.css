@@ -19,6 +19,7 @@ h1{
 }
 h2{
     font-size: 2rem;
+    font-weight: normal;
 }
 
 .game h2{
@@ -67,10 +68,16 @@ h2{
 .choice-container{
     display: flex;
     justify-content: space-around;
+    height: 20%;
+    text-align: center;
 }
 
 .choice{
     background-color: #FFFB9F;
     width: 20%;
-    height: 20%;
+    font-size: 4rem;
+    border-radius: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

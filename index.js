@@ -6,19 +6,19 @@ function getRandChoice() {
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
-        return 'Tied';
+        return 'tie';
     }
 
     if (playerSelection === 0) {
-        if (computerSelection === 2) return 'Won';
+        if (computerSelection === 2) return 'win';
     }
     else if (playerSelection === 1) {
-        if (computerSelection === 0) return 'Won';
+        if (computerSelection === 0) return 'win';
     }
     else if (playerSelection === 2) {
-        if (computerSelection === 1) return 'Won';
+        if (computerSelection === 1) return 'win';
     }
-    return 'Lost';
+    return 'lose';
 }
 
 function game() {
@@ -56,7 +56,8 @@ let message = document.querySelector('#message');
 let yourScoreElement = document.querySelector('#your-score');
 let computerScoreElement = document.querySelector('#computer-score');
 
-//Indexing emoji codes, easy evaluation of getRandChoice()'s reutrn value
+//Indexing emoji codes, easy evaluation of choices from 0-2
+const choices = ['Rock', 'Paper', 'Scissors'];
 const emojis = ['&#9994', '&#9995', '&#9996'];
 
 function displayEmoji(parent, emoji) {
@@ -74,7 +75,20 @@ function playRoundClick(playerChoice){
     let computerChoice = getRandChoice();
     displayEmoji(computerPlay, emojis[computerChoice]);
     let result = playRound(playerChoice, computerChoice);
-    message.textContent = `You ${result}!`;
+    if (result === 'win'){
+        message.textContent = `You Won! ${choices[playerChoice]} beats ${choices[computerChoice]}`;
+        yourScore++;
+        yourScoreElement.textContent = `You: ${yourScore}`;
+        return;
+    }
+    if (result === 'lose'){
+        console.log("LOSE RAN");
+        message.textContent = `You Lost: ${choices[computerChoice]} beats ${choices[playerChoice]}`;
+        computerScore++;
+        computerScoreElement.textContent = `You: ${computerScore}`;
+        return;
+    }
+    message.textContent = 'Tie!';
 }
 
 rock.addEventListener('click', ()=>{

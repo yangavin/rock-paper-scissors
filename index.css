@@ -15,3 +15,43 @@ h1{
 h2{
     font-size: 2rem;
 }
+
+.game{
+    margin-left: 6rem;
+    margin-right: 6rem;
+    height: 25rem;
+}
+
+.arena{
+    display: flex;
+    justify-content: space-around;
+    height:50%;
+}
+
+.you{
+    background-color: #FF7A7A;
+}
+
+.computer{
+    background-color: #56C2FF;
+}
+
+.you, .computer{
+    width: 30%;
+    border-radius: 1.5rem;
+}
+
+.result{
+    height: 5rem;
+}
+
+.choice-container{
+    display: flex;
+    justify-content: space-around;
+}
+
+.choice{
+    background-color: #FFFB9F;
+    width: 20%;
+    height: 20%;
+}

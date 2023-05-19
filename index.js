@@ -69,25 +69,20 @@ function displayEmoji(parent, emoji) {
 
 let yourScore = computerScore = 0;
 
-rock.addEventListener('click', () => {
-    displayEmoji(yourPlay, '&#9994');
+function playRoundClick(playerChoice){
+    displayEmoji(yourPlay, emojis[playerChoice]);
     let computerChoice = getRandChoice();
     displayEmoji(computerPlay, emojis[computerChoice]);
-    let result = playRound(0, computerChoice);
+    let result = playRound(playerChoice, computerChoice);
     message.textContent = `You ${result}!`;
 }
-);
-paper.addEventListener('click', () => {
-    displayEmoji(yourPlay, '&#9995');
-    let computerChoice = getRandChoice();
-    displayEmoji(computerPlay, emojis[computerChoice]);
-    let result = playRound(1, computerChoice);
-    message.textContent = `You ${result}!`;
+
+rock.addEventListener('click', ()=>{
+    playRoundClick(0);
 });
-scissors.addEventListener('click', () => {
-    displayEmoji(yourPlay, '&#9996');
-    let computerChoice = getRandChoice();
-    displayEmoji(computerPlay, emojis[computerChoice]);
-    let result = playRound(2, computerChoice);
-    message.textContent = `You ${result}!`;
+paper.addEventListener('click', ()=>{
+    playRoundClick(1);
+});
+scissors.addEventListener('click', ()=>{
+    playRoundClick(2);
 });

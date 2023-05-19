@@ -6,8 +6,13 @@ body{
     background-color: rgb(38, 38, 38);
 }
 
+header{
+    margin-bottom: 3rem;
+}
+
 h1, h2{
     text-align: center;
+    margin: 0;
 }
 h1{
     font-size: 2.5rem;
@@ -16,10 +21,14 @@ h2{
     font-size: 2rem;
 }
 
+.game h2{
+    margin-bottom: .4rem;
+}
+
 .game{
     margin-left: 6rem;
     margin-right: 6rem;
-    height: 25rem;
+    height: 40rem;
 }
 
 .arena{
@@ -28,16 +37,26 @@ h2{
     height:50%;
 }
 
-.you{
+.you, .computer{
+    width: 30%;
+}
+
+.your-play{
     background-color: #FF7A7A;
 }
 
-.computer{
+.computer-play{
     background-color: #56C2FF;
 }
 
 .you, .computer{
-    width: 30%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+}
+
+.your-play, .computer-play{
+    flex-grow: 1;
     border-radius: 1.5rem;
 }
 

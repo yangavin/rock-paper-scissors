@@ -1,5 +1,5 @@
 //0 is rock, 1 is paper, 2 is scissors
-//&#9994 &#9995 &#9996 (rock paper scissors) emoji
+//'&#9994' '&#9995' '&#9996' (rock paper scissors) emoji
 function getRandChoice() {
     return Math.floor(Math.random() * 3);
 }
@@ -46,10 +46,15 @@ function game(){
     else alert("Oh no! You lost best of 5.");
 }
 
+//Selecting all relavant elements
 let rock = document.querySelector('#rock');
 let paper = document.querySelector('#paper');
 let scissors = document.querySelector('#scissors');
 let yourPlay = document.querySelector('#your-play-emoji');
+let computerPlay = document.querySelector('#computer-play-emoji');
+
+//Indexing emoji codes, easy evaluation of getRandChoice()'s reutrn value
+const emojis = ['&#9994', '&#9995', '&#9996'];
 
 function displayEmoji(parent, emoji){
     parent.innerHTML = emoji;
@@ -59,13 +64,25 @@ function displayEmoji(parent, emoji){
       }, 200);
 }
 
-rock.addEventListener('click', (e)=>{
+rock.addEventListener('click', ()=>{
     displayEmoji(yourPlay, '&#9994');
+    let computerChoice = getRandChoice();
+    displayEmoji(computerPlay, emojis[computerChoice]);
+    let result = playRound(0, computerChoice);
+    console.log(result);
     }
-)
-paper.addEventListener('click', (e)=>{
+);
+paper.addEventListener('click', ()=>{
     displayEmoji(yourPlay, '&#9995');
+    let computerChoice = getRandChoice();
+    displayEmoji(computerPlay, emojis[computerChoice]);
+    let result = playRound(0, computerChoice);
+    console.log(result);
 });
-scissors.addEventListener('click', (e)=>{
+scissors.addEventListener('click', ()=>{
     displayEmoji(yourPlay, '&#9996');
+    let computerChoice = getRandChoice();
+    displayEmoji(computerPlay, emojis[computerChoice]);
+    let result = playRound(0, computerChoice);
+    console.log(result);
 });

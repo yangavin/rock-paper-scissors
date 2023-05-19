@@ -108,8 +108,8 @@ button:hover{
     box-shadow: 0 0.5em 0.5em -0.4em #f1ff5c;
 }
 
-.restart-container{
-    display: flex;
+#restart-container{
+    display: none;
     justify-content: center;
     align-items: center;
     margin: 2rem;

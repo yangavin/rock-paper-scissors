@@ -1,5 +1,6 @@
 //0 is rock, 1 is paper, 2 is scissors
 //'&#9994' '&#9995' '&#9996' (rock paper scissors) emoji
+//'&#1F36A' cookie
 function getRandChoice() {
     return Math.floor(Math.random() * 3);
 }
@@ -55,6 +56,8 @@ let computerPlay = document.querySelector('#computer-play-emoji');
 let message = document.querySelector('#message');
 let yourScoreElement = document.querySelector('#your-score');
 let computerScoreElement = document.querySelector('#computer-score');
+let result = document.querySelector('#result');
+let restart = document.querySelector('#restart-container');
 
 //Indexing emoji codes, easy evaluation of choices from 0-2
 const choices = ['Rock', 'Paper', 'Scissors'];
@@ -79,16 +82,38 @@ function playRoundClick(playerChoice){
         message.textContent = `You Won! ${choices[playerChoice]} beats ${choices[computerChoice]}`;
         yourScore++;
         yourScoreElement.textContent = `You: ${yourScore}`;
-        return;
     }
-    if (result === 'lose'){
+    else if (result === 'lose'){
         console.log("LOSE RAN");
         message.textContent = `You Lost: ${choices[computerChoice]} beats ${choices[playerChoice]}`;
         computerScore++;
         computerScoreElement.textContent = `You: ${computerScore}`;
-        return;
     }
-    message.textContent = 'Tie!';
+    else{
+        message.textContent = 'Tie!';
+    }
+    if (yourScore === 5){
+        gameOver('won');
+    }
+    else if (computerScore === 5){
+        gameOver('lose');
+    }
+}
+
+function gameOver(state){
+    rock.disabled = true;
+    paper.disabled = true;
+    scissors.disabled = true;
+    if (state === 'won'){
+        result.textContent = 'You Won Best of 5!';
+        message.innerHTML = 'Here, have this cookie &#x1F36A';
+    }
+    else{
+        result.textContent = 'You Lost Best of 5';
+        const messages = ['(ノ-_-)ノ ミ ┴┴', '(☞ ͡° ͜ʖ ͡°)☞', '¯\\_( ͡° ͜ʖ ͡°)_/¯'];
+        message.textContent = messages[getRandChoice()];
+    }
+    restart.style.display = 'flex';
 }
 
 rock.addEventListener('click', ()=>{

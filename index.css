@@ -6,10 +6,6 @@ body{
     background-color: rgb(38, 38, 38);
 }
 
-header{
-    /* margin-bottom: 3rem; */
-}
-
 h1, h2{
     text-align: center;
     margin: 0;
@@ -27,19 +23,15 @@ main h2{
 }
 
 main{
-    margin-left: 6rem;
-    margin-right: 6rem;
+    margin-left: 10rem;
+    margin-right: 10rem;
     height: 40rem;
 }
 
 .arena{
     display: flex;
     justify-content: space-around;
-    height:50%;
-}
-
-.you, .computer{
-    
+    height: 45%;
 }
 
 .your-play{

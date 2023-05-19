@@ -78,11 +78,11 @@ function playRoundClick(playerChoice){
 function gameOver(state){
     rock.disabled = paper.disabled = scissors.disabled = true;
     if (state === 'won'){
-        result.textContent = 'You Won Best of 5!';
+        result.textContent = 'You Won Best of 9!';
         message.innerHTML = 'Here, have this cookie &#x1F36A';
     }
     else{
-        result.textContent = 'You Lost Best of 5';
+        result.textContent = 'You Lost Best of 9';
         const messages = ['(ノ-_-)ノ ミ ┴┴', '(☞ ͡° ͜ʖ ͡°)☞', '¯\\_( ͡° ͜ʖ ͡°)_/¯'];
         message.textContent = messages[getRandChoice()];
     }

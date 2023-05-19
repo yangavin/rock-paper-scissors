@@ -36,10 +36,12 @@ main{
 
 .your-play{
     background-color: #FF7A7A;
+    box-shadow: 0 0 .5em #FF7A7A;
 }
 
 .computer-play{
     background-color: #56C2FF;
+    box-shadow: 0 0 .5em #56C2FF;
 }
 
 .you, .computer{
@@ -55,6 +57,7 @@ main{
 
 .result-container{
     height: 5rem;
+    margin-top: .2rem;
     margin-bottom: 1rem;
 }
 .message{
@@ -68,7 +71,17 @@ main{
     text-align: center;
 }
 
+button{
+    cursor: pointer;
+    transition: .2s;
+}
+
+button:hover{
+    transform: translate(0, -.2rem);
+}
+
 .choice{
+    display: block;
     background-color: #FFFB9F;
     width: 20%;
     font-size: 4rem;
@@ -76,6 +89,9 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.choice:hover{
+    box-shadow: 0 0.5em 0.5em -0.4em #f1ff5c;
 }
 
 .restart-container{
@@ -89,7 +105,8 @@ main{
     width: 12rem;
     height: 3rem;
     background-color: #5BB86F;
-    color: white;
+    color: rgb(236, 236, 236);
     border: none;
     border-radius: .3rem;
+    font-size: 1.2rem;
 }

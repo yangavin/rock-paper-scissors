@@ -106,4 +106,6 @@ restartButton.addEventListener('click', ()=>{
     yourScoreElement.textContent = `You: ${yourScore}`;
     computerScoreElement.textContent = `Computer: ${computerScore}`;
     result.textContent = message.textContent = '';
+    yourPlay.innerHTML = '';
+    computerPlay.innerHTML = '';
 })

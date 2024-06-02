@@ -1,5 +1,4 @@
 //0 is rock, 1 is paper, 2 is scissors
-//'&#9994' '&#9995' '&#9996' (rock paper scissors) emoji
 //'&#1F36A' cookie
 function getRandChoice() {
     return Math.floor(Math.random() * 3);
@@ -37,7 +36,7 @@ let restartButton = document.querySelector('#restart');
 
 //Indexing emoji codes, easy evaluation of choices from 0-2
 const choices = ['Rock', 'Paper', 'Scissors'];
-const emojis = ['&#9994', '&#9995', '&#9996'];
+const emojis = ['✊', '✋', '✌️'];
 
 function displayEmoji(parent, emoji) {
     parent.innerHTML = emoji;
